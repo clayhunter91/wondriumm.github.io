@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="en"><head>
+<title>Wondrium Classes  - Watch Any Wondrium Online </title>
+
+<meta property="og:url" content="index.php">
+<meta property="og:type" content="article">
+
+<meta name="google" content="notranslate">
+<link rel="canonical" href="index.php">
+<link rel="alternate" hreflang="x-default" href="index.php">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="theme-color" content="#cd067c">
+<meta name="msapplication-navbutton-color" content="#cd067c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<link rel="icon" type="image/png" sizes="32x32" href>
+<link rel="icon" type="image/png" sizes="16x16" href>
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/styleae52ae52.css">
+<script src="js/rocket-loader.min.js" data-cf-settings="bf9aa22ad7ec5a059caa9874-|49"></script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700;800&display=swap">
+<script async src="js/api.js"></script>
+<script src="js/jquery-3.6.0.js" crossorigin="anonymous"></script>
+
+<script src="js/jquery-3.6.0.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/normalize.min.css">
+
+  <link rel="stylesheet" href="css/plyr.css">
+
+	<style>
+		.vcontainer {
+        display: none;
+      }
+      .card-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 2px solid red;
+   position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+
+.card-buttons {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #eee;
+}
+
+.play-button, .download-button {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #1c7cd5;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.download-button {
+  background-color: #d53a1c;
+  margin-left: 10px;
+}
+.card-content {
+  margin-bottom: 50px; /* Add margin for card footer */
+}
+	</style>
+<script>
+$(document).ready(function(){
+  
+  $("#sub").click(function() {
+    var city_name=$("#city").val();
+    $.ajax({
+      url:'ajax.php',
+      data:{url:city_name},
+      type:'POST',
+      beforeSend: function(){
+                  $("#result").empty();
+
+    // Show image container
+    $("#loading_img").show();
+   },
+      success:function(data) {
+        $("#result").html(data);
+                $("#tohide").hide(); // hide the form-home-search div
+
+      },complete:function(data){
+    // Hide image container
+    $("#loading_img").hide();
+   }
+    });
+    
+  });
+  
+});
+
+</script>
+
+</head>
+<body>
+
+<div class="container">
+<div class="jumbotron custom-jum no-mrg">
+<div class="container">
+<div class="center">
+<h2 style="font-size: 24px;"><b>Wondrium Premium Course/Classes </b></h2>
+<div class="home-search">
+<h4>Watch any classes or courses from Wondrium Directly. Premium Content Free !</h4>
+</div>
+<div class="form-home-search">
+    <div id="tohide">
+<div style="position:relative;" class="input-group col-lg-11 col-md-10">
+<input type="hidden" name="_token" value="zJYFscDyEbhLo1zY2iswsQqKip9iUlcKa07mKSVn"> <input style="padding-left:50px;" name="url" id="city" class="form-control input-md ht58" placeholder="For Example : https://www.wondrium.com/how-to-draw?tn=198_tray_Course_2_2_303" type="text" required="required" value autocomplete="off">
+<input type="hidden" name="locale" value="en" id="locale">
+
+ <button id="paste" style="position:absolute;
+  left: 5px;
+  top: 9px;
+  border:none;
+  outline:none;
+  text-align:center;
+    padding:10px;
+
+  font-weight:bold;
+  z-index:4"><i style class="fa fa-paste" aria-hidden="true"></i></button>
+<span class="input-group-btn">
+<button class="btn btn-primary input-md btn-download ht58" type="submit" name="sub" id="sub" value="Get">Search</button>
+
+</span>
+</div>
+<small>For example : https://www.wondrium.com/5-keys-to-immunity-with-dr-roger-seheult?tn=208_tray_Course_5_2_22007</small>
+<br>
+<small>Browse All Subjects : <a href="https://www.wondrium.com/allsubjects">Wondrium All Subjects</a></small>
+</div>
+
+<br>
+<br>
+<div class id="loading_img" style="display: none;">
+<div class="loader spinner"></div>
+<br>
+<span>Please Wait - Doing Magic.....</span>
+</div>
+<div id="video-section" class="vcontainer" style="border:1px solid red; padding:5px;">
+    <video controls crossorigin playsinline autoplay></video>
+  </div>
+  <br>
+  <br>
+<div class="col-lg-12" id="result">
+</div>
+
+<!-- <small>For Example : <span style="color:red;">https://vm.tiktok.com/ZMNpE13nk/?k=1</span></small> -->
+
+</div>
+
+<!-- hna kan -->
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+       
+
+
+<script src="js/jquery.min.js" type="bf9aa22ad7ec5a059caa9874-text/javascript"></script>
+<script src="js/bootstrap.min.js" defer type="bf9aa22ad7ec5a059caa9874-text/javascript"></script>
+<script src="js/scriptsc164.js" defer type="bf9aa22ad7ec5a059caa9874-text/javascript"></script>
+
+<script>
+document.getElementById('paste').addEventListener('click', ()=>{
+    let pasteArea = document.getElementById('city');
+    pasteArea.value = '';
+
+    navigator.clipboard.readText()
+    .then((text)=>{
+        pasteArea.value = text;
+    });
+});</script>
+<script src="js/hls.min.js"></script>
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL"></script>
+  <script src="https://unpkg.com/plyr@3"></script>
+
+<script src="js/rocket-loader.min.js" data-cf-settings="bf9aa22ad7ec5a059caa9874-|49" defer></script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'70feb8695fc9fa4c',m:'uDpNVrJXANERn0AmElG9oEJPP7tomUUwrvJrHZygOGI-1653318647-0-ARO/nxARdP9LJg1YJ0EknDdECneakj6+kth0bIc/dX66UPgmLlXy4Gr+2uKKLjMA4P1j4P6Y/pELYxS3JFXc6g0tKF7B3abXpsRpF8/y/c5rKxLOBo3U97qSLrvFA2mzCQ==',s:[0x4fd1cc2b9a,0x3ad6d5cd67],}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" data-cf-beacon="{" rayId":"70feb8695fc9fa4c","version":"2021.12.0","r":1,"token":"ff181edf044349b1baf089d838d26eac","si":100}" crossorigin="anonymous"></script>
+
+
+
+</body></html>

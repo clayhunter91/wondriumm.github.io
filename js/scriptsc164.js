@@ -1,0 +1,1 @@
+function init(){for(var t=document.getElementsByTagName("img"),e=0;e<t.length;e++)t[e].getAttribute("data-src")&&t[e].setAttribute("src",t[e].getAttribute("data-src"))}$(document).ready((function(){$("#url").keypress((function(t){13==t.which&&(t.preventDefault(),analyze())})),$("#url").bind("paste",(function(t){setTimeout((function(){analyze()}),200)}))})),window.onload=init;
